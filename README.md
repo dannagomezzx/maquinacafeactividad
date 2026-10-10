@@ -121,3 +121,37 @@ Tipo de dato: Number
 Unidad: gramos para el café y mililitros para el agua
 Descripción: indican las cantidades necesarias para preparar un Americano, el agua se utiliza en la receta, pero no se controla como inventario.
 
+Se proponen las siguientes cantidades para iniciar el funcionamiento de la maquina:
+* Café: 500 g
+* Leche: 2.000 ml
+* Chocolate: 300 g
+* Azúcar: 500 g
+* Saldo inicial: $0 COP
+
+Productos y recetas:
+Producto 1: Mocachino
+* Café: 18 g.
+* Leche: 150 ml.
+* Chocolate: 20 g.
+* Precio: $8.000 COP.
+
+Producto 2: Capuchino
+* Café: 18 g.
+* Leche: 120 ml.
+* Precio: $7.000 COP.
+
+Producto 3: Café latte
+* Café: 18 g.
+* Leche: 200 ml.
+* Precio: $7.500 COP.
+
+Producto 4: Espresso
+* Café: 18 g.
+* Precio: $4.000 COP.
+
+Producto 5: Americano
+* Café: 18 g.
+* Agua caliente: 120 ml.
+* Precio: $5.000 COP.
+
+El azúcar se considerará un ingrediente disponible para uso opcional, pero no se incluye como consumo obligatorio en las recetas.
