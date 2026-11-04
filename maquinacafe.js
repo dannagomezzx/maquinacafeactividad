@@ -57,7 +57,7 @@ console.log("Saldo disponible", saldo);
 //saldo -= mocachinoPrecio; //Compra un Mocachino
 console.log("Saldo disponible después de comprar un Mocachino", saldo);
 
-//10.comprobar saldo
+//10.comprobar saldo del mocachino
 
 if (saldo >= mocachinoPrecio){
     consologe.log("Saldo suficiente");
@@ -65,12 +65,65 @@ if (saldo >= mocachinoPrecio){
     console.log("saldo insuficiente");
 }
 
-//11.comprobar ingredientes
-if (cafeDisponible >= mocachinoCafe && 
-    lecheDisponible >=mocachinoLeche &&
-chocolateDisponible >=mocachinoChocolate &&
-azucarDisponible >= mocachinoAzucar) {
-    console.log("ingredientes suficientes");
+//10.comprobar ingredientes del mocachino
+if (cafeDisponible >= mocachinoCafe && lecheDisponible >=mocachinoLeche && chocolateDisponible >=mocachinoChocolate && azucarDisponible >= mocachinoAzucar) {
+    console.log("Hay suficientes ingredientes para preparar un mocachino");
 } else {
-    console.log("ingredientes insuficientes");
+    console.log("No hay suficientes ingredientes para preparar un mocachino");
+}
+
+//11.comprobar saldo del capuchino
+if (saldo >= capuchinoPrecio){
+    consologe.log("Saldo suficiente");
+} else {
+    console.log("saldo insuficiente");
+}
+
+//11.comprobar ingredientes del capuchino
+if (cafeDisponible >= capuchinoCafe && lecheDisponible >=capuchinoLeche && azucarDisponible >= capuchinoAzucar) {
+    console.log("Hay suficientes ingredientes para preparar un capuchino");
+} else {
+    console.log("No hay suficientes ingredientes para preparar un capuchino");
+}
+
+//12.comprobar saldo del café latte
+if (saldo >= lattePrecio){
+    consologe.log("Saldo suficiente");
+} else {
+    console.log("saldo insuficiente");
+}
+
+//12.comprobar ingredientes del café latte
+if (cafeDisponible >= latteCafe && lecheDisponible >=latteLeche && azucarDisponible >= latteAzucar) {
+    console.log("Hay suficientes ingredientes para preparar un café latte");
+} else {
+    console.log("No hay suficientes ingredientes para preparar un café latte");
+}
+
+//13.comprobar saldo del espresso
+if (saldo >= espressoPrecio){
+    consologe.log("Saldo suficiente");
+} else {
+    console.log("saldo insuficiente");
+}
+
+//13.comprobar ingredientes del espresso
+if (cafeDisponible >= espressoCafe && azucarDisponible >= espressoAzucar) {
+    console.log("Hay suficientes ingredientes para preparar un espresso");
+} else {
+    console.log("No hay suficientes ingredientes para preparar un espresso");
+}
+
+//14.comprobar saldo del americano
+if (saldo >= americanoPrecio){
+    consologe.log("Saldo suficiente");
+} else {
+    console.log("saldo insuficiente");
+}
+
+//14.comprobar ingredientes del americano
+if (cafeDisponible >= americanoCafe && aguaDisponible>=americanoAgua && azucarDisponible >= americanoAzucar) {
+    console.log("Hay suficientes ingredientes para preparar un americano");
+} else {
+    console.log("No hay suficientes ingredientes para preparar un americano");
 }
