@@ -51,13 +51,26 @@ console.log ( "precio por persona", precioPorPersona);
 console.log ( "sobrante de cafe", sobranteCafe);
 
 //9. operadores de asignación
-saldo += 10000; //Ingresa 10.000 COP a la máquina
+//saldo += 10000; //Ingresa 10.000 COP a la máquina
 console.log("Saldo disponible", saldo);
 
-saldo -= mocachinoPrecio; //Compra un Mocachino
+//saldo -= mocachinoPrecio; //Compra un Mocachino
 console.log("Saldo disponible después de comprar un Mocachino", saldo);
 
+//10.comprobar saldo
 
+if (saldo >= mocachinoPrecio){
+    consologe.log("Saldo suficiente");
+} else {
+    console.log("saldo insuficiente");
+}
 
-
-
+//11.comprobar ingredientes
+if (cafeDisponible >= mocachinoCafe && 
+    lecheDisponible >=mocachinoLeche &&
+chocolateDisponible >=mocachinoChocolate &&
+azucarDisponible >= mocachinoAzucar) {
+    console.log("ingredientes suficientes");
+} else {
+    console.log("ingredientes insuficientes");
+}
