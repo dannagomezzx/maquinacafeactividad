@@ -127,3 +127,15 @@ if (cafeDisponible >= americanoCafe && aguaDisponible>=americanoAgua && azucarDi
 } else {
     console.log("No hay suficientes ingredientes para preparar un americano");
 }
+
+//15.menú de la máquina de café
+let opcion = prompt("Bienvenido a la máquina de café. Por favor seleccione una opción: \n1. Mocachino-8000 COP\n2. Capuchino-7500 COP\n3. Café latte-7500 COP\n4. Espresso-4000 COP\n5. Americano-5000 COP");
+
+//16.selección de la azucar
+let deseaAzucar = prompt("¿Desea agregar azúcar a su bebida? (Sí/No)"); 
+
+//17.identificar el producto seleccionado
+let nombreProducto = "";
+
+
+
