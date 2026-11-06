@@ -131,11 +131,113 @@ if (cafeDisponible >= americanoCafe && aguaDisponible>=americanoAgua && azucarDi
 //15.menú de la máquina de café
 let opcion = prompt("Bienvenido a la máquina de café. Por favor seleccione una opción: \n1. Mocachino-8000 COP\n2. Capuchino-7500 COP\n3. Café latte-7500 COP\n4. Espresso-4000 COP\n5. Americano-5000 COP");
 
-//16.selección de la azucar
-let deseaAzucar = prompt("¿Desea agregar azúcar a su bebida? (Sí/No)"); 
-
-//17.identificar el producto seleccionado
-let nombreProducto = "";
-
+//16.identificar el producto seleccionado
+switch(opcion) {
+    case "1":
+        nombreProducto = mocachinoNombre;
+        precioProducto = mocachinoPrecio;
+        cafeProducto = mocachinoCafe;
+        lecheProducto = mocachinoLeche;
+        chocolateProducto = mocachinoChocolate;
+        azucarProducto = mocachinoAzucar;
+        console.log("Ha seleccionado un " + nombreProducto + " que cuesta " + precioProducto + " COP.");
+        //verificar el dinero
+        if (saldo >= mocachinoPrecio) {
+            console.log("Saldo suficiente para comprar un mocachino.");
+        } else {
+            console.log("Saldo insuficiente para comprar un mocachino.");
+        }
+        //verificar los ingredientes
+        if (cafeDisponible >= mocachinoCafe && lecheDisponible >=mocachinoLeche && chocolateDisponible >=mocachinoChocolate && azucarDisponible >= mocachinoAzucar) {
+            console.log("Hay suficientes ingredientes para preparar un mocachino.");
+        } else {
+            console.log("No hay suficientes ingredientes para preparar un mocachino.");
+        }
+        //Preguntar si desea agregar azúcar
+        let respuestaAzucar = prompt("¿Desea agregar azúcar a su " + nombreProducto + "? (sí/no)");
+        if (agregarAzucar.toLowerCase() === "sí" || agregarAzucar.toLowerCase() === "si") {
+    break;
+    case "2":
+        nombreProducto = capuchinoNombre;
+        precioProducto = capuchinoPrecio;
+        cafeProducto = capuchinoCafe;
+        lecheProducto = capuchinoLeche;
+        azucarProducto = capuchinoAzucar;
+        console.log("Ha seleccionado un " + nombreProducto + " que cuesta " + precioProducto + " COP.");
+        //verificar el dinero
+        if (saldo >= capuchinoPrecio) {
+            console.log("Saldo suficiente para comprar un capuchino.");
+        } else {
+            console.log("Saldo insuficiente para comprar un capuchino.");
+        }
+        //verificar los ingredientes
+        if (cafeDisponible >= capuchinoCafe && lecheDisponible >=capuchinoLeche && azucarDisponible >= capuchinoAzucar) {
+            console.log("Hay suficientes ingredientes para preparar un capuchino.");
+        } else {
+            console.log("No hay suficientes ingredientes para preparar un capuchino.");
+        }
+    break;
+    case "3":
+        nombreProducto = latteNombre;
+        precioProducto = lattePrecio;
+        cafeProducto = latteCafe;
+        lecheProducto = latteLeche;
+        azucarProducto = latteAzucar;
+        console.log("Ha seleccionado un " + nombreProducto + " que cuesta " + precioProducto + " COP.");
+        //verificar el dinero
+        if (saldo >= lattePrecio) {
+            console.log("Saldo suficiente para comprar un café latte.");
+        } else {
+            console.log("Saldo insuficiente para comprar un café latte.");
+        }
+        //verificar los ingredientes
+        if (cafeDisponible >= latteCafe && lecheDisponible >=latteLeche && azucarDisponible >= latteAzucar) {
+            console.log("Hay suficientes ingredientes para preparar un café latte.");
+        } else {
+            console.log("No hay suficientes ingredientes para preparar un café latte.");
+        }
+    break;
+    case "4":
+        nombreProducto = espressoNombre;
+        precioProducto = espressoPrecio;
+        cafeProducto = espressoCafe;
+        azucarProducto = espressoAzucar;
+        console.log("Ha seleccionado un " + nombreProducto + " que cuesta " + precioProducto + " COP.");
+        //verificar el dinero
+        if (saldo >= espressoPrecio) {
+            console.log("Saldo suficiente para comprar un espresso.");
+        } else {
+            console.log("Saldo insuficiente para comprar un espresso.");
+        }
+        //verificar los ingredientes
+        if (cafeDisponible >= espressoCafe && azucarDisponible >= espressoAzucar) {
+            console.log("Hay suficientes ingredientes para preparar un espresso.");
+        } else {
+            console.log("No hay suficientes ingredientes para preparar un espresso.");
+        }
+    break;
+    case "5":
+        nombreProducto = americanoNombre;
+    precioProducto = americanoPrecio;
+    cafeProducto = americanoCafe;
+    aguaProducto = americanoAgua;
+    azucarProducto = americanoAzucar;
+    console.log("Ha seleccionado un " + nombreProducto + " que cuesta " + precioProducto + " COP.");
+    //verificar el dinero
+    if (saldo >= americanoPrecio) {
+        console.log("Saldo suficiente para comprar un americano.");
+    } else {
+        console.log("Saldo insuficiente para comprar un americano.");
+    }
+    //verificar los ingredientes
+    if (cafeDisponible >= americanoCafe && aguaDisponible >= americanoAgua && azucarDisponible >= americanoAzucar) {
+        console.log("Hay suficientes ingredientes para preparar un americano.");
+    } else {
+        console.log("No hay suficientes ingredientes para preparar un americano.");
+    }
+    break;
+    default:
+        console.log("Opción no válida. Por favor seleccione una opción del 1 al 5.");
+}
 
 
