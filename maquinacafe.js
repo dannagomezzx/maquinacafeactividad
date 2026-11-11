@@ -131,7 +131,27 @@ if (cafeDisponible >= americanoCafe && aguaDisponible>=americanoAgua && azucarDi
 //15.menú de la máquina de café
 let opcion = prompt("Bienvenido a la máquina de café. Por favor seleccione una opción: \n1. Mocachino-8000 COP\n2. Capuchino-7500 COP\n3. Café latte-7500 COP\n4. Espresso-4000 COP\n5. Americano-5000 COP");
 
-//16.identificar el producto seleccionado
+//16.Agregar function a mi código
+//function 1:verificar el saldo
+function validarSaldo(precioProducto, nombreProducto) {
+    console.log(precioProducto)
+    saldo = Number(prompt("Por favor ingrese el valor de dinero de la bebida que desea"))
+    let mensaje;
+
+    if (saldo >= precio) {
+        alert("Saldo suficiente para comprar un " + nombreProducto + ".");
+        
+    } else {
+        alert("Saldo insuficiente para comprar un " + nombreProducto + ".");
+        
+    }
+
+    return mensaje;
+}
+
+
+
+//17.identificar el producto seleccionado
 switch(opcion) {
     case "1":
         nombreProducto = mocachinoNombre;
@@ -153,10 +173,10 @@ switch(opcion) {
         } else {
             console.log("No hay suficientes ingredientes para preparar un mocachino.");
         }
-        //Preguntar si desea agregar azúcar
-        let respuestaAzucar = prompt("¿Desea agregar azúcar a su " + nombreProducto + "? (sí/no)");
-        if (agregarAzucar.toLowerCase() === "sí" || agregarAzucar.toLowerCase() === "si") {
-    break;
+        // Preguntar si desea agregar azúcar
+        let respuestaAzucar = prompt('¿Desea agregar azúcar a su ' + nombreProducto + '? (sí/no)');
+        if (  respuestaAzucar &&  (respuestaAzucar.toLowerCase() === 'sí' || respuestaAzucar.toLowerCase() === 'si')) {
+  break; }
     case "2":
         nombreProducto = capuchinoNombre;
         precioProducto = capuchinoPrecio;
@@ -176,7 +196,10 @@ switch(opcion) {
         } else {
             console.log("No hay suficientes ingredientes para preparar un capuchino.");
         }
-    break;
+        // Preguntar si desea agregar azúcar
+        let respuestaAzucar = prompt('¿Desea agregar azúcar a su ' + nombreProducto + '? (sí/no)');
+        if (  respuestaAzucar &&  (respuestaAzucar.toLowerCase() === 'sí' || respuestaAzucar.toLowerCase() === 'si')) {
+    break;}
     case "3":
         nombreProducto = latteNombre;
         precioProducto = lattePrecio;
@@ -196,7 +219,10 @@ switch(opcion) {
         } else {
             console.log("No hay suficientes ingredientes para preparar un café latte.");
         }
-    break;
+        // Preguntar si desea agregar azúcar
+        let respuestaAzucar = prompt('¿Desea agregar azúcar a su ' + nombreProducto + '? (sí/no)');
+        if (  respuestaAzucar &&  (respuestaAzucar.toLowerCase() === 'sí' || respuestaAzucar.toLowerCase() === 'si')) {
+    break;}
     case "4":
         nombreProducto = espressoNombre;
         precioProducto = espressoPrecio;
@@ -215,7 +241,10 @@ switch(opcion) {
         } else {
             console.log("No hay suficientes ingredientes para preparar un espresso.");
         }
-    break;
+        // Preguntar si desea agregar azúcar
+        let respuestaAzucar = prompt('¿Desea agregar azúcar a su ' + nombreProducto + '? (sí/no)');
+        if (  respuestaAzucar &&  (respuestaAzucar.toLowerCase() === 'sí' || respuestaAzucar.toLowerCase() === 'si')) {
+    break;}
     case "5":
         nombreProducto = americanoNombre;
     precioProducto = americanoPrecio;
@@ -235,7 +264,10 @@ switch(opcion) {
     } else {
         console.log("No hay suficientes ingredientes para preparar un americano.");
     }
-    break;
+    // Preguntar si desea agregar azúcar
+        let respuestaAzucar = prompt('¿Desea agregar azúcar a su ' + nombreProducto + '? (sí/no)');
+        if (  respuestaAzucar &&  (respuestaAzucar.toLowerCase() === 'sí' || respuestaAzucar.toLowerCase() === 'si')) {
+  break;}
     default:
         console.log("Opción no válida. Por favor seleccione una opción del 1 al 5.");
 }
