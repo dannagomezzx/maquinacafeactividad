@@ -1,40 +1,40 @@
 :root {
-  /* Variables de Color */
-  --gray-050: #f5f5f5;
-  --gray-100: #e8e8e8;
-  --gray-200: #d4d4d4;
-  --gray-300: #bdbdbd;
-  --gray-400: #9e9e9e;
-  --gray-500: #7a7a7a;
-  --gray-600: #5c5c5c;
-  --gray-700: #444444;
-  --gray-800: #2b2b2b;
-  --gray-900: #171717;
+ /* Paleta beige, rojo y amarillo */
+  --gray-050: #FFF9F0;
+  --gray-100: #F5EBDD;
+  --gray-200: #EDE2D0;
+  --gray-300: #D8C5AC;
+  --gray-400: #B99C7D;
+  --gray-500: #98765F;
+  --gray-600: #735448;
+  --gray-700: #4A3831;
+  --gray-800: #352923;
+  --gray-900: #251C19;
 
-  /* Colores semánticos */
-  --color-page-bg: var(--gray-200);
-  --color-machine: var(--gray-700);
-  --color-machine-light: var(--gray-600);
-  --color-machine-dark: var(--gray-800);
+  /* Colores de la máquina */
+  --color-page-bg: var(--gray-100);
+  --color-machine: #A9473D;
+  --color-machine-light: #C66A5B;
+  --color-machine-dark: var(--gray-700);
   --color-border: var(--gray-900);
-  --color-glass: var(--gray-100);
-  --color-glass-shine: var(--gray-050);
-  --color-shelf: var(--gray-400);
+  --color-glass: var(--gray-050);
+  --color-glass-shine: #FFFFFF;
+  --color-shelf: #D6AD52;
   --color-shelf-edge: var(--gray-600);
-  --color-interior: var(--gray-300);
-  --color-product: var(--gray-600);
-  --color-panel: var(--gray-800);
+  --color-interior: var(--gray-200);
+  --color-product: #A9473D;
+  --color-panel: #A9473D;
   --color-text-light: var(--gray-050);
   --color-text-dark: var(--gray-900);
-  --color-text-muted: var(--gray-400);
+  --color-text-muted: var(--gray-300);
   --color-screen-bg: var(--gray-900);
-  --color-screen-text: var(--gray-100);
-  --color-key: var(--gray-200);
-  --color-key-hover: var(--gray-050);
-  --color-key-active: var(--gray-400);
-  --color-input-bg: var(--gray-100);
+  --color-screen-text: var(--gray-050);
+  --color-key: var(--gray-100);
+  --color-key-hover: #D6AD52;
+  --color-key-active: var(--gray-300);
+  --color-input-bg: var(--gray-050);
   --color-slot: var(--gray-900);
-  --color-led: var(--gray-050);
+  --color-led: #D6AD52;
   --color-shadow: var(--gray-900);
 
   /* Medidas */
@@ -43,7 +43,6 @@
   --radius-sm: 8px;
   --machine-width: 560px;
 }
-
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
