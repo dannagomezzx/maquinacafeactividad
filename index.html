@@ -13,7 +13,7 @@
   <main class="machine">
 
     <header class="machine__top">
-      <span class="machine__brand">MÁQUINA DISPENSADORA</span>
+      <span class="machine__brand">MÁQUINA DE CAFÉ</span>
       <span class="machine__led" aria-hidden="true"></span>
     </header>
 
@@ -27,9 +27,9 @@
             <div class="product" aria-hidden="true"></div>
             <div class="shelf__info">
               <span class="shelf__code">1</span>
-              <span class="shelf__name">Producto 1</span>
-              <span class="shelf__price">$1.234</span>
-              <span class="shelf__stock">Stock: <b>123</b></span>
+              <span class="shelf__name">Mocachino</span>
+              <span class="shelf__price">$8.000</span>
+              <span class="shelf__stock">Disponible</span>
             </div>
           </div>
 
@@ -37,9 +37,9 @@
             <div class="product" aria-hidden="true"></div>
             <div class="shelf__info">
               <span class="shelf__code">2</span>
-              <span class="shelf__name">Producto 2</span>
-              <span class="shelf__price">$1.234</span>
-              <span class="shelf__stock">Stock: <b>123</b></span>
+              <span class="shelf__name">Capuchino</span>
+              <span class="shelf__price">$7.000</span>
+              <span class="shelf__stock">Disponible</span>
             </div>
           </div>
 
@@ -47,9 +47,9 @@
             <div class="product" aria-hidden="true"></div>
             <div class="shelf__info">
               <span class="shelf__code">3</span>
-              <span class="shelf__name">Producto 3</span>
-              <span class="shelf__price">$1.234</span>
-              <span class="shelf__stock">Stock: <b>123</b></span>
+              <span class="shelf__name">Café latte</span>
+              <span class="shelf__price">$7.500</span>
+              <span class="shelf__stock">Disponible</span>
             </div>
           </div>
 
@@ -57,9 +57,9 @@
             <div class="product" aria-hidden="true"></div>
             <div class="shelf__info">
               <span class="shelf__code">4</span>
-              <span class="shelf__name">Producto 4</span>
-              <span class="shelf__price">$1.234</span>
-              <span class="shelf__stock">Stock: <b>123</b></span>
+              <span class="shelf__name">Espresso</span>
+              <span class="shelf__price">$4.000</span>
+              <span class="shelf__stock">Disponible</span>
             </div>
           </div>
 
@@ -67,11 +67,12 @@
             <div class="product" aria-hidden="true"></div>
             <div class="shelf__info">
               <span class="shelf__code">5</span>
-              <span class="shelf__name">Producto 5</span>
-              <span class="shelf__price">$1.234</span>
-              <span class="shelf__stock">Stock: <b>123</b></span>
+              <span class="shelf__name">Americano</span>
+              <span class="shelf__price">$5.000</span>
+              <span class="shelf__stock">Disponible</span>
             </div>
           </div>
+
           <span class="glass__shine" aria-hidden="true"></span>
         </div>
 
@@ -92,29 +93,37 @@
 
       <!-- Panel de control -->
       <aside class="panel" aria-label="Panel de control">
+
         <div class="screen" role="status" aria-live="polite">
           <span class="screen__label">Saldo</span>
           <span class="screen__value" id="credit">$0</span>
         </div>
 
-        <!-- Formulario de saldo -->
+        <!-- Formulario para ingresar dinero -->
         <form class="balance-form" id="balance-form" autocomplete="off">
-          <label class="balance-form__label" for="balance-input">Ingrese su dinero</label>
+          <label class="balance-form__label" for="balance-input">
+            Ingrese su dinero
+          </label>
+
           <div class="balance-form__row">
             <input
               class="balance-form__input"
               id="balance-input"
               name="balance"
               type="number"
-              min="0"
-              step="100"
-              placeholder="0"
-              inputmode="decimal"
+              min="500"
+              step="500"
+              placeholder="Valor en pesos"
+              inputmode="numeric"
               required>
-            <button class="balance-form__submit" type="submit">Abonar</button>
+
+            <button class="balance-form__submit" type="submit">
+              Abonar
+            </button>
           </div>
         </form>
 
+        <!-- Teclado para seleccionar el café -->
         <div class="keypad">
           <button class="key" type="button" data-select="1">1</button>
           <button class="key" type="button" data-select="2">2</button>
@@ -124,6 +133,7 @@
           <button class="key cancel" type="button" data-action="cancel">✕</button>
         </div>
 
+        <!-- Botón para devolver el dinero -->
         <button class="return" type="button" data-action="return-change">
           Devolver cambio
         </button>
@@ -134,13 +144,17 @@
             <span class="output__label">Salida billetes</span>
             <span class="output__opening" id="bill-output"></span>
           </div>
+
           <div class="output output--coin">
             <span class="output__label">Salida monedas</span>
             <span class="output__opening" id="coin-output"></span>
           </div>
         </div>
+
       </aside>
     </div>
   </main>
+
+  <script src="maquinacafe.js"></script>
 </body>
 </html>
