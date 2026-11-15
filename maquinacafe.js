@@ -1,5 +1,80 @@
 // 1. Saldo del usuario
 let saldo = 0;
+//1.1 Denominaciones de dinero que acepta la máquina
+const billetesAceptados =(2000,5000,10000,20000)
+const monedasAceptadas =(500,1000)
+
+//1.2 Dinero disponible en la máquina para devolver cambio
+let cajaBilletes={
+    20000: 5,
+    10000: 5,
+    5000: 5,
+    2000: 5,
+};
+
+let cajaMonedas={
+    1000: 10,
+    500: 10,
+};
+
+//1.3 Función para recibir dinero
+function recibirDinero(valor) {
+if (billetesAceptados.includes(valor) || monedasAceptadas.includes(valor)) {
+saldo += valor;
+console.log("Dinero recibido: $" + valor);
+console.log("Saldo actual: $" + saldo);
+return true;
+} else {
+    console.log("Esta denominación no es aceptada por la máquina.");
+    return false;
+    }
+}
+
+// 1.4. Función para calcular el cambio
+function calcularCambio(cantidad) {
+let cambioPendiente = cantidad;
+let cambio = {};
+let denominaciones = [20000, 10000, 5000, 2000, 1000, 500];
+
+for (let denominacion of denominaciones) {
+    let cantidadDisponible;
+    if (denominacion >= 2000) {cantidadDisponible = cajaBilletes[denominacion];
+        } else {
+        cantidadDisponible = cajaMonedas[denominacion];
+        }
+
+let cantidadNecesaria = Math.floor(cambioPendiente / denominacion);
+let cantidadEntregada = Math.min(cantidadNecesaria, cantidadDisponible);
+    if (cantidadEntregada > 0) {cambio[denominacion] = cantidadEntregada;cambioPendiente -= cantidadEntregada * denominacion;
+        }
+    }
+
+    if (cambioPendiente === 0) {
+    return cambio;
+    } else {
+        return null;
+    }
+}
+
+//1.5 Función para devolver el cambio
+function devolverCambio() {
+let cambio = calcularCambio(saldo);
+if (cambio === null) {
+console.log("La máquina no tiene cambio suficiente.");
+return false;
+}
+
+for (let denominacion in cambio) {let cantidad = cambio[denominacion];
+if (denominacion >= 2000) {cajaBilletes[denominacion] -= cantidad;
+} else {
+cajaMonedas[denominacion] -= cantidad;}
+console.log("Entregar " + cantidad + " de $" + denominacion);
+}
+
+console.log("Cambio devuelto: $" + saldo);
+saldo = 0;
+return true;
+}
 
 // 2. Inventario inicial de la máquina
 let cafeDisponible = 500//gramos
@@ -133,42 +208,49 @@ let opcion = prompt("Bienvenido a la máquina de café. Por favor seleccione una
 //16.Agregar function a mi código
 //function 1:verificar el saldo
 function validarSaldo(precioProducto, nombreProducto) {
-    if (saldo >= precioProducto) {
-        let devuelta = saldo - precioProducto;
-        alert("Saldo suficiente para comprar un " + nombreProducto + ". Su devuelta es: " + devuelta + " COP.");
-        return true;
-    } else {
-        alert("Saldo insuficiente para comprar un " + nombreProducto + ".");
-        return false;
+if (saldo >= precioProducto) {
+console.log("Saldo suficiente para comprar " + nombreProducto);
+return true;
+} else {
+    console.log("Saldo insuficiente para comprar " + nombreProducto);
+    return false;
     }
 }
 
+
 //Function 2: verificar cantidades de cada producto y preparar
 function validarIngredientes(nombreProducto, cafeProducto, lecheProducto, chocolateProducto, azucarProducto) {
- if (cafeDisponible >= cafeProducto && lecheDisponible >= lecheProducto && chocolateDisponible >= chocolateProducto) {
-   alert("Hay suficientes ingredientes para preparar un " + nombreProducto);
+if (cafeDisponible >= cafeProducto &&lecheDisponible >= lecheProducto &&chocolateDisponible >= chocolateProducto) {
 
-   // Preguntar si desea agregar azúcar
 let respuestaAzucar = prompt("¿Desea agregar azúcar a su " + nombreProducto + "? (sí/no)");
-    if (respuestaAzucar && (respuestaAzucar.toLowerCase() === "sí" || respuestaAzucar.toLowerCase() === "si")) {
-            if (azucarDisponible >= azucarProducto) {
-                azucarDisponible -= azucarProducto;
-                alert("Su " + nombreProducto + " con azúcar está listo.");
-            } else {
-                alert("No hay azúcar suficiente. Su " + nombreProducto + " se sirvió sin azúcar.");
-            }
-        } else {
-            alert("¡Listo! Su " + nombreProducto + " sin azúcar está listo.");
+let agregarAzucar = respuestaAzucar &&(respuestaAzucar.toLowerCase() === "sí" ||respuestaAzucar.toLowerCase() === "si");
+
+if (agregarAzucar && azucarDisponible < azucarProducto) 
+    {alert("No hay azúcar suficiente. Su café se preparará sin azúcar.");agregarAzucar = false;
         }
 
-// Descontar los ingredientes usados del inventario
-   cafeDisponible -= cafeProducto;
-   lecheDisponible -= lecheProducto;
-   chocolateDisponible -= chocolateProducto;
-  
-} else {
-        alert("No hay suficientes ingredientes para preparar un " + nombreProducto + ".");
+// Descontar ingredientes utilizados
+cafeDisponible -= cafeProducto;
+lecheDisponible -= lecheProducto;
+chocolateDisponible -= chocolateProducto;
+
+if (agregarAzucar) {azucarDisponible -= azucarProducto;}
+alert("¡Su " + nombreProducto + " está listo!");
+return true;
+    } else {
+    alert("No hay suficientes ingredientes para preparar un " + nombreProducto);
+    return false;
     }
+}
+
+//Función para realizar una compra
+function comprarProducto(nombreProducto, precioProducto, cafeProducto, lecheProducto, chocolateProducto, azucarProducto) {
+if (validarSaldo(precioProducto, nombreProducto)) {if (validarIngredientes(nombreProducto, cafeProducto, lecheProducto, chocolateProducto, azucarProducto)) {saldo -= precioProducto;
+console.log("Producto comprado: " + nombreProducto);console.log("Precio: $" + precioProducto);
+console.log("Saldo restante: $" + saldo);
+return true;}
+    }
+    return false;
 }
 
 //17.identificar el producto seleccionado
@@ -207,5 +289,6 @@ default:
     alert("Opción de bebida no válida. Por favor seleccione una opción del 1 al 5.");
         break;
 }
+
 
 
